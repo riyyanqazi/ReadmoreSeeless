@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Read More UI</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #313131;
+        font-family: cursive;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .card {
+        background: #5f5f5f;
+        color: #f0e8e8;
+        width: 350px;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        transition: 0.3s;
+      }
+
+      .card h1 {
+        margin-top: 0;
+        font-size: 22px;
+      }
+
+      .card p {
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      .more {
+        display: none;
+        margin-top: 10px;
+      }
+
+      button {
+        margin-top: 15px;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 10px;
+        background: #3498db;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h1>Random Texts</h1>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ad
+        mollitia fugit iusto dolorum placeat voluptas animi.
+      </p>
+
+      <p class="more">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil iure
+        veniam possimus dolorum consequatur blanditiis harum, libero eaque nisi
+        repellat facere dignissimos quis fugit illum aliquam ut reiciendis
+        incidunt nobis.
+      </p>
+
+      <button id="toggleBtn">Read More</button>
+    </div>
+
+    <script>
+      let btn = document.getElementById("toggleBtn");
+      let moreText = document.querySelector(".more");
+
+      btn.addEventListener("click", () => {
+        if (moreText.style.display === "block") {
+          moreText.style.display = "none";
+          btn.textContent = "Read More";
+        } else {
+          moreText.style.display = "block";
+          btn.textContent = "See Less";
+        }
+      });
+    </script>
+  </body>
+</html>
